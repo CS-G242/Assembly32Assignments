@@ -1,6 +1,7 @@
 {
     "name": "32-Bit NASM Environment",
     "build": { "dockerfile": "Dockerfile" },
+    "postCreateCommand": "git config --global core.hooksPath /dev/null",
     "customizations": {
         "vscode": {
             "extensions": [ "ms-vscode.cpptools" ],

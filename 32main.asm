@@ -1,7 +1,10 @@
 ; =========================================================================
-; FILE: main.asm (32-Bit Version)
-; DESCRIPTION: The absolute simplest starter code for absolute beginners.
-;              This program calculates 5 + 10 and prints the answer.
+; FILE: 32main.asm (32-Bit Version)
+; DESCRIPTION: This is the basic template.  
+;  It print outs "The answer is:" along with the contents of eax
+;  Make sure that you put the final result in eax
+;  Put your code inside the student work zone. 
+;  Don't change anything else
 ; =========================================================================
 
 ; These two lines are REQUIRED setup. They must stay at the top of the file.
@@ -29,22 +32,21 @@ main:
     ; =====================================================================
     ; STUDENT WORK ZONE
     ; Students only edit the lines inside this box.
+    ; remove the mov instruction shown and put it your code.
     ; =====================================================================
-    
-    mov eax, 5        ; 1. Move the number 5 into a temporary storage box named EAX
-    add eax, 10       ; 2. Add 10 to whatever number is currently inside box EAX
-                      ;    (Box EAX now holds the number 15)
-    
+    mov eax, 42        ; 1. Move the number 42 into the register named EAX
+
     ; =====================================================================
 
-
+    ; "Do not touch or delete anything below this line!"
     ; ---------------------------------------------------------------------
-    ; END BOILERPLATE: Printing the answer and exiting safely.
-    ; Tell students: "Do not touch or delete anything below this line!"
+    ; END BOILERPLATE: The code below prints the answer and exiting safely.
+    ; it uses printf which is a C function
+   
     ; ---------------------------------------------------------------------
     ; In 32-bit, we pass arguments to printf by pushing them onto the stack
     ; backwards. First we push the number, then we push the text format.
-    push eax                ; Push the number inside box EAX (the answer)
+    push eax                ; Push the number inside register EAX (the answer)
     push format_string      ; Push our text layout template
     call printf             ; Trigger the print command to show the text
     add esp, 8              ; Clean up the stack (we pushed two 4-byte items)
